@@ -13,24 +13,28 @@ class Client extends Discord.Client {
         super();
 
         this.config = config;
+
+        // Let's get the essentials going
+        this.init();
     }
 
     async init() {
         // Require all our modules
         require('./modules/helpers')(this);
+        require('./modules/logger')(this);
 
         // Load all commands from the commands folder
         this.commands = [];
-        const cmdFiles = await readdir("./commands/");
-        console.log(`Loading a total of ${cmdFiles.length} commands...`);
+        const cmdFiles = await readdir("./src/commands/");
+        this.log(`Loading a total of ${cmdFiles.length} commands...`);
         cmdFiles.forEach(f => {
             if (!f.endsWith(".js")) return;
             this.loadCommand(f);
         });
 
         // Load all events from the event folder and bind them to the client
-        const evtFiles = await readdir("./events/");
-        console.log(`Loading a total of ${evtFiles.length} events...`);
+        const evtFiles = await readdir("./src/events/");
+        this.log(`Loading a total of ${evtFiles.length} events...`);
         evtFiles.forEach(f => {
             if (!f.endsWith(".js")) return;
             this.loadEvent(f);
