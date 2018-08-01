@@ -1,0 +1,27 @@
+{
+  "name": "node-bot-base",
+  "version": "1.0.0",
+  "description": "This is a boilerplate bot that I will use for every new node.js Discord bot I make",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonasPardon/node-bot-base.git"
+  },
+  "keywords": [
+    "node",
+    "discord",
+    "bot"
+  ],
+  "author": "Jonas Pardon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JonasPardon/node-bot-base/issues"
+  },
+  "homepage": "https://github.com/JonasPardon/node-bot-base#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
