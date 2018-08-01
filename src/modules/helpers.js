@@ -9,9 +9,9 @@ module.exports = async client => {
         try {
             const command = require(`../commands/${commandName}`);
             client.commands[commandName.substring(0, commandName.length - 3)] = command;
-            client.log(` 👌 Loaded command: ${command.help.name}.`);
+            client.log.log(` 👌 Loaded command: ${command.help.name}.`);
         } catch (e) {
-            client.error(`Unable to load command ${commandName}: ${e}`);
+            client.log.error(`Unable to load command ${commandName}: ${e}`);
         }
     }
 
@@ -26,9 +26,9 @@ module.exports = async client => {
             eventName = eventName.split(".")[0];
             const event = require(`../events/${eventName}`);
             client.on(eventName, event.bind(null, client));
-            client.log(` 👌 Loaded event: ${eventName}.`);
+            client.log.log(` 👌 Loaded event: ${eventName}.`);
         }catch(e){
-            client.error(`Unable to load event ${eventName}: ${e}`);
+            client.log.error(`Unable to load event ${eventName}: ${e}`);
         }
     }
 }
