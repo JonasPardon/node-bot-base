@@ -14,12 +14,14 @@ module.exports = async (client, msg) => {
 
     //  Get rid of the prefix and extract the arguments
     const args = msg.content.substring(client.config.prefix.length, msg.content.length).split(' ');
+    const commandToCall = client.commands[args[0]];
+    args.shift();
 
     //  If the command doesn't exist, ignore it
     //  If it does, run the command
-    if(!client.commands[args[0]]) return;
-    client.commands[args[0]].run(client, msg, args);
+    if(!commandToCall) return;
+    commandToCall.run(client, msg, args);
 
     //  Log the called command
-    client.log.cmd(`Guild: ${msg.guild.name} | Channel: #${msg.channel.name} | User: ${msg.author.tag} | Command: ${client.commands[args[0]].help.name}`);
+    client.log.log(`Guild: ${msg.guild.name} | Channel: #${msg.channel.name} | User: ${msg.author.tag} | Command: ${commandToCall.help.name}`, 'cmd');
 }

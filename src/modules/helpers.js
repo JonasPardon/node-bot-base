@@ -31,4 +31,24 @@ module.exports = async client => {
             client.log.error(`Unable to load event ${eventName}: ${e}`);
         }
     }
+
+    /**
+     * Clean the passed text, this takes out @everyone
+     * pings and the token, so it can't be leaked accidentally
+     * 
+     * @param {String} text 
+     */
+    client.clean = async (text) => {
+        if (text && text.constructor.name == "Promise")
+          text = await text;
+        if (typeof evaled !== "string")
+          text = require("util").inspect(text, {depth: 1});
+    
+        text = text
+          .replace(/`/g, "`" + String.fromCharCode(8203))
+          .replace(/@/g, "@" + String.fromCharCode(8203))
+          .replace(client.token, "mfa.VkO_2G4Qv3T--NO--lWetW_tjND--TOKEN--QFTm6YGtzq9PH--4U--tG0");
+    
+        return text;
+    };
 }
