@@ -59,7 +59,7 @@ module.exports = async client => {
      * 
      * @param {String} message 
      */
-    client.permlevel = msg => {
+    client.permLevel = msg => {
         let permLevel = 0;
 
         const permOrder = client.config.permLevels.slice(0).sort((p, c) => p.level < c.level ? 1 : -1);

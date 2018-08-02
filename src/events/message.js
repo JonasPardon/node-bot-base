@@ -18,7 +18,7 @@ module.exports = async (client, msg) => {
     args.shift();
 
     // Get the user's permission level
-    const userPermLevel = client.permlevel(msg);
+    const userPermLevel = client.permLevel(msg);
 
     // If the command doesn't exist, ignore it
     // If the user's permission level is too low, ignore it

@@ -14,6 +14,13 @@ class Client extends Discord.Client {
 
         this.config = config;
 
+        this.embed = () => {
+            return new Discord.RichEmbed()
+                .setColor('#ffffff')
+                .setTimestamp()
+                .setFooter('');
+        }
+
         // Let's get the essentials going
         this.init();
     }
