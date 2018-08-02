@@ -11,5 +11,6 @@ exports.run = async (client, msg, args, level) => { // eslint-disable-line no-un
 
 exports.help = {
     name: 'eval',
-    description: 'Execute artibrary javascript code (bot owner only)'
+    description: 'Execute artibrary javascript code (bot owner only)',
+    permLevel: 10
 }
