@@ -5,5 +5,5 @@ exports.run = async (client, msg, args) => {
 exports.help = {
     name: 'ping',
     description: 'Play some ping pong with the bot',
-    permLevel: 10
+    permLevel: 0
 }

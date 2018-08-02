@@ -1,20 +1,24 @@
 exports.run = async (client, msg, args, level) => { // eslint-disable-line no-unused-vars
+
     let body = `*Prefix*: \`${client.config.prefix}\`\n\n`;
     let embed = client.embed();
 
     const userPermLevel = client.permLevel(msg);
 
-    // return console.log(typeof(client.commands));
-
+    // Loop over all the commands and check if the user can 
+    // use these commands. If they can, add them to the 
+    // list, otherwise ignore them
     Object.keys(client.commands).forEach(cmd => {
         if(userPermLevel < client.commands[cmd].help.permLevel) return;
-        // console.log(cmd);
         body += `__**${client.commands[cmd].help.name}**__\n*${client.commands[cmd].help.description}*\n\n`;
     });
 
     embed.setTitle('Help')
         .setDescription(body);
     
+    // The message is an embed, this can sometimes give issues
+    // with the bot's premissions in a server, so make sure to
+    // catch it
     msg.channel.send(embed)
         .catch(e => {
             msg.channel.send(`The following went wrong when calling the help command:\n${e}`);
