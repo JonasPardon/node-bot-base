@@ -7,7 +7,7 @@ exports.run = async (client, msg, args, level) => { // eslint-disable-line no-un
     } catch (err) {
         msg.channel.send(`\`ERROR\` \`\`\`xl\n${await client.clean(err)}\n\`\`\``);
     }
-};
+}
 
 exports.help = {
     name: 'eval',

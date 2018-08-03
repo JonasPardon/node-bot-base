@@ -3,6 +3,8 @@ exports.run = async (client, msg, args, level) => { // eslint-disable-line no-un
     let body = `*Prefix*: \`${client.config.prefix}\`\n\n`;
     let embed = client.embed();
 
+    // Get the user's permission level so we know which
+    // commands we can show in the help list
     const userPermLevel = client.permLevel(msg);
 
     // Loop over all the commands and check if the user can 
@@ -17,13 +19,13 @@ exports.run = async (client, msg, args, level) => { // eslint-disable-line no-un
         .setDescription(body);
     
     // The message is an embed, this can sometimes give issues
-    // with the bot's premissions in a server, so make sure to
+    // with the bot's permissions in a server, so make sure to
     // catch it
     msg.channel.send(embed)
         .catch(e => {
             msg.channel.send(`The following went wrong when calling the help command:\n${e}`);
         });
-};
+}
 
 exports.help = {
     name: 'help',
