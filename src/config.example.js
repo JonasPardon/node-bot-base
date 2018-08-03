@@ -4,7 +4,7 @@ module.exports = {
     dev: false,
 
     token: '',
-    prefix: '',
+    prefix: '!',
 
     // Array of user ID's
     owner: [
