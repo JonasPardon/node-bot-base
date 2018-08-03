@@ -1,6 +1,6 @@
 exports.run = async (client, msg, args) => { // eslint-disable-line no-unused-vars
 
-    msg.channel.send('Rebooting, I\'ll be right back! 👌');
+    await msg.channel.send('Rebooting, I\'ll be right back! 👌');
 
     process.exit(1);
 }
