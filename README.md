@@ -17,7 +17,7 @@ Inspired by Anidiot's Guide's bot.
 ## Commands
 
 ##### User commands
-`!help` Display the help command, this will only show the commands the current user has access to.
+`!help` Display the help command, this will only show the commands the current user has access to.  
 `!ping` Play some ping pong with the bot.
 
 ##### Bot owner commands
