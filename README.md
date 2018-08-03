@@ -21,7 +21,8 @@ Inspired by Anidiot's Guide's bot.
 `!ping` Play some ping pong with the bot.
 
 ##### Bot owner commands
-`!eval` Evaluate arbitrary javascript code. This is very dangerous, so don't give anyone access to this.
+`!eval` Evaluate arbitrary javascript code. This is very dangerous, so don't give anyone access to this.  
+`!reboot` Gracefully exit the process. Will reboot if running under forever or pm2.
 
 ## Configuration options
 These go in `config.js`. See also `config.example.js`.

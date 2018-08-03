@@ -1,4 +1,4 @@
-exports.run = async (client, msg, args, level) => { // eslint-disable-line no-unused-vars
+exports.run = async (client, msg, args) => { // eslint-disable-line no-unused-vars
 
     let body = `*Prefix*: \`${client.config.prefix}\`\n\n`;
     let embed = client.embed();

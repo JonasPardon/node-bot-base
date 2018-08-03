@@ -1,4 +1,4 @@
-exports.run = async (client, msg, args, level) => { // eslint-disable-line no-unused-vars
+exports.run = async (client, msg, args) => { // eslint-disable-line no-unused-vars
     const code = args.join(" ");
     try {
         const evaled = eval(code);
